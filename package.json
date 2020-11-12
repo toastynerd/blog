@@ -5,9 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test-unit": "jest test/api/unit",
-    "test-int": "jest test/api/integration",
-    "test": "jest test/api",
-    "test-server": "NODE_ENV='TEST' node src"
+    "test-int-run": "jest test/api/integration",
+    "test-int": "start-server-and-test test-server 5000 test-int-run",
+    "test": "npm run test-unit && npm run test-int",
+    "test-server": "NODE_ENV='test' node src"
   },
   "keywords": [],
   "author": "",

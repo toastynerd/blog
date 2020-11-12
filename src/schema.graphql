@@ -1,3 +1,7 @@
+type Query {
+  latest: [Post]!
+}
+
 type Post {
   id: ID!
   title: String!

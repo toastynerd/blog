@@ -3,7 +3,11 @@ const request = require('supertest')(url);
 
 test('it should return an array of latest post titles', (done) => {
   request.post('/')
-    .send({ query: '{ latest }'})
+    .send({ query: `{ 
+      latest {
+        title
+      }
+    }`})
     .expect(200)
     .end((err, res) => {
       expect(err).toBeNull();
