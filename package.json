@@ -4,17 +4,19 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node src",
+    "start": "ENV=dev docker-compose up",
+    "start-server": "node src",
     "test-unit": "jest test/api/unit",
     "test-int-run": "jest test/api/integration",
     "test-int": "start-server-and-test test-server 5000 test-int-run",
     "test": "npm run test-unit && npm run test-int",
-    "test-server": "NODE_ENV='test' node src"
+    "test-server": "ENV=test docker-compose up"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@prisma/client": "^2.11.0",
     "graphql-yoga": "^1.18.3"
   },
   "devDependencies": {

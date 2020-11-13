@@ -1,5 +1,5 @@
 function latest(parents, args, context, info) {
-  return [];
+  return context.prisma.post.findMany();
 };
 
 module.exports = {
