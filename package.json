@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "node src",
     "test-unit": "jest test/api/unit",
     "test-int-run": "jest test/api/integration",
     "test-int": "start-server-and-test test-server 5000 test-int-run",
